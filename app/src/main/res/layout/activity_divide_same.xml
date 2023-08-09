@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f3f2ed"
+    tools:context=".divideSame">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:background="#facda7"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Divide Same Value"
+        android:textSize="30.0sp"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/totalPrice"
+            android:layout_width="23dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:textSize="15.0sp"
+            android:gravity="center"
+            android:text="Total Price (RM)" />
+
+        <EditText
+            android:id="@+id/totalPrice2"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:backgroundTint="#000000"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="92dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/numOfPeople"
+            android:layout_width="127dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:textSize="15.0sp"
+            android:gravity="center"
+            android:text="Number Of People" />
+
+        <EditText
+            android:id="@+id/numOfPeople2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:backgroundTint="#000000"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:inputType="number"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/serviceCharge"
+            android:layout_width="127dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:textSize="15.0sp"
+            android:gravity="center"
+            android:text="Service Charge (%)" />
+
+        <EditText
+            android:id="@+id/serviceCharge2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:backgroundTint="#000000"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/calculate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Calculate" />
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="27dp"
+        android:orientation="horizontal"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/priceAfterDivide"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="#000000"
+            android:textSize="15.0sp"
+            android:gravity="center"
+            android:text="Price After Divide" />
+
+        <EditText
+            android:id="@+id/priceAfterDivide2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:backgroundTint="#000000"
+            android:textCursorDrawable="@drawable/text_cursor"
+            android:inputType="numberDecimal"
+            android:minHeight="48dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="41dp" />
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:orientation="horizontal"></LinearLayout>
+
+</LinearLayout>
