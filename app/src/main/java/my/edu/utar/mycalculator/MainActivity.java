@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //find divideSame Button id
+        //Change the page to divideSame page
         myButton=findViewById(R.id.divideSame);
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,15 +26,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        myButton2=findViewById(R.id.divideRatio);
+        //find dividePercentage Button id
+        //Change the page to dividePercentage page
+        myButton2=findViewById(R.id.dividePercentage);
         myButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(v.getContext(),divideRatio.class);
+                Intent intent=new Intent(v.getContext(),dividePercentage.class);
                 startActivity(intent);
             }
         });
 
+        //find History Button id
+        //Change the page to History page
         myButton3=findViewById(R.id.history);
         myButton3.setOnClickListener(new View.OnClickListener() {
             @Override

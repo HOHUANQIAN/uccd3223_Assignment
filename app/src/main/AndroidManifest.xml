@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyCalculator">
         <activity
+            android:name=".dividePercentage"
+            android:exported="false" />
+        <activity
             android:name=".SQLiteAdapter"
             android:exported="false" />
         <activity
             android:name=".History_Run"
-            android:exported="false" />
-        <activity
-            android:name=".divideRatio"
             android:exported="false" />
         <activity
             android:name=".divideSame"

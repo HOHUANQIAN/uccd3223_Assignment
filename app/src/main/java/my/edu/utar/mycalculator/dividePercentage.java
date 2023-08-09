@@ -17,7 +17,7 @@ import org.w3c.dom.Text;
 
 import java.text.DecimalFormat;
 
-public class divideRatio extends AppCompatActivity {
+public class dividePercentage extends AppCompatActivity {
 
     public EditText inputNumPeople,inputTotalPrice;
     public EditText name,percentage,priceAfterDivide2;
@@ -35,7 +35,7 @@ public class divideRatio extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_divide_ratio);
+        setContentView(R.layout.activity_divide_percentage);
 
         inputNumPeople=(EditText)findViewById(R.id.numOfPeople4);
         inputTotalPrice=(EditText)findViewById(R.id.totalPrice3);
@@ -59,7 +59,7 @@ public class divideRatio extends AppCompatActivity {
                 numOfPeople=Integer.valueOf(inputNumPeople.getText().toString());
 
                 if(numOfPeople>8){
-                    AlertDialog.Builder builder=new AlertDialog.Builder(divideRatio.this);
+                    AlertDialog.Builder builder=new AlertDialog.Builder(dividePercentage.this);
                     builder.setTitle("Error");
                     builder.setMessage("Do not enter more than 8 people");
                     builder.setCancelable(false);
@@ -67,6 +67,10 @@ public class divideRatio extends AppCompatActivity {
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            myLinearLayout.removeAllViews();
+                            myLinearLayout2.removeAllViews();
+                            myLinearLayout3.removeAllViews();
+                            myLinearLayout4.removeAllViews();
                             dialog.cancel();
                         }
                     });
@@ -76,54 +80,65 @@ public class divideRatio extends AppCompatActivity {
                     alert.show();
                 }
                 else{
-                    text = new TextView(divideRatio.this);
+                    myLinearLayout.removeAllViews();
+                    myLinearLayout2.removeAllViews();
+                    myLinearLayout3.removeAllViews();
+                    myLinearLayout4.removeAllViews();
+
+                    text = new TextView(dividePercentage.this);
                     text.setText("Name");
-                    text.setTextSize(15.0f);
+                    text.setTextSize(18.0f);
+                    text.setTextColor(Color.WHITE);
+                    text.setBackgroundColor(Color.parseColor("#cc7aa3"));
                     myLinearLayout.addView(text);
 
                     for (int i = 0; i < numOfPeople; i++) {
-                        name = new EditText(divideRatio.this); // Initialize a new TextView
+                        name = new EditText(dividePercentage.this); // Initialize a new TextView
                         name.setText("People "+(i+1));
                         name.setTextSize(15.0f);
                         myLinearLayout.addView(name);// Add the TextView to the linear layout
                         name.setKeyListener(null);
                     }
 
-                    text2 = new TextView(divideRatio.this);
+                    text2 = new TextView(dividePercentage.this);
                     text2.setText("Percentage (%)");
-                    text2.setTextSize(15.0f);
+                    text2.setTextSize(18.0f);
+                    text2.setTextColor(Color.WHITE);
+                    text2.setBackgroundColor(Color.parseColor("#cc7aa3"));
                     myLinearLayout2.addView(text2);
 
                     for (int i = 0; i < numOfPeople; i++) {
-                        percentage = new EditText(divideRatio.this); // Initialize a new TextView
+                        percentage = new EditText(dividePercentage.this); // Initialize a new TextView
                         percentageList[i]=percentage;
                         percentage.setTextSize(15.0f);
                         myLinearLayout2.addView(percentage); // Add the TextView to the linear layout
 
                     }
 
-                    text = new TextView(divideRatio.this);
+                    text = new TextView(dividePercentage.this);
                     text.setText("Price After Divide");
-                    text.setTextSize(15.0f);
+                    text.setTextSize(18.0f);
+                    text.setTextColor(Color.WHITE);
+                    text.setBackgroundColor(Color.parseColor("#cc7aa3"));
                     myLinearLayout3.addView(text);
 
-                    button4=new Button(divideRatio.this);
+                    button4=new Button(dividePercentage.this);
                     button4.setText("Calculate");
                     myLinearLayout4.addView(button4);
 
-                    button5=new Button(divideRatio.this);
+                    button5=new Button(dividePercentage.this);
                     button5.setText("Clear");
                     myLinearLayout4.addView(button5);
 
-                    button6=new Button(divideRatio.this);
+                    button6=new Button(dividePercentage.this);
                     button6.setText("Save");
 
                     button4.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
 
-                             double percentage2;
-                             double sum=0;
+                            double percentage2;
+                            double sum=0;
 
                             for(int i=0;i<numOfPeople;i++){
                                 percentage2=Double.valueOf(percentageList[i].getText().toString());
@@ -132,7 +147,7 @@ public class divideRatio extends AppCompatActivity {
                             }
 
                             if(sum!=100){
-                                AlertDialog.Builder builder=new AlertDialog.Builder(divideRatio.this);
+                                AlertDialog.Builder builder=new AlertDialog.Builder(dividePercentage.this);
                                 builder.setTitle("Error");
                                 builder.setMessage("Sum of the percentage not equal to 100%");
                                 builder.setCancelable(false);
@@ -140,6 +155,11 @@ public class divideRatio extends AppCompatActivity {
                                 builder.setPositiveButton("Enter Again", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
+                                        myLinearLayout.removeAllViews();
+                                        myLinearLayout2.removeAllViews();
+                                        myLinearLayout3.removeAllViews();
+                                        myLinearLayout4.removeAllViews();
+
                                         dialog.cancel();
                                     }
                                 });
@@ -161,7 +181,7 @@ public class divideRatio extends AppCompatActivity {
                                 // Use the format() method to format the number with two decimal places
                                 String formattedPrice = decimalFormat.format(priceAfterDivide);
 
-                                priceAfterDivide2 = new EditText(divideRatio.this);
+                                priceAfterDivide2 = new EditText(dividePercentage.this);
                                 priceAfterDivide2.setText(formattedPrice);
                                 priceAfterDivide2.setTextSize(15.0f);
                                 priceAfterDivide2.setKeyListener(null);
@@ -192,7 +212,7 @@ public class divideRatio extends AppCompatActivity {
                             intent.putExtra("percentages",percentageList2);
                             intent.putExtra("totalPrice2",totalPrice);
                             intent.putExtra("priceDivide",priceList);
-                            intent.putExtra("divideRatio",true);
+                            intent.putExtra("dividePercentage",true);
                             startActivity(intent);
                         }
                     });

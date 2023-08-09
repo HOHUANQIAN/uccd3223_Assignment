@@ -8,13 +8,15 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class History_Run extends AppCompatActivity {
 
     public SQLiteAdapter mySQLiteAdapter;
     public String name;
     public double totalPrice, priceDivide, serviceTax;
     public int numOfPeople2;
-    public boolean divideSame, divideRatio;
+    public boolean divideSame, dividePercentage;
     public LinearLayout ll;
     public double[] percentageList,priceList;
 
@@ -25,15 +27,15 @@ public class History_Run extends AppCompatActivity {
 
         ll = findViewById(R.id.layout6);
 
-//        TextView attribute=new TextView(this);
-//        attribute.setText("Name    |"+"Total Price"+"|"+"Tax/Percent"+"|"+"Price Divide");
-//        attribute.setTextSize(18.0f);
-//        attribute.setBackgroundColor(Color.LTGRAY);
+        TextView attribute=new TextView(this);
+        attribute.setText("Name    |"+"Total Price"+"|"+"Tax/Percent"+"|"+"Price Divide");
+        attribute.setTextSize(18.0f);
+        attribute.setBackgroundColor(Color.LTGRAY);
 
         TextView listContent = new TextView(this);
         listContent.setTextSize(18.0f);
 
-        //ll.addView(attribute);
+        ll.addView(attribute);
         ll.addView(listContent);
 
         divideSame = getIntent().getBooleanExtra("divideSame", true);
@@ -45,6 +47,7 @@ public class History_Run extends AppCompatActivity {
             mySQLiteAdapter = new SQLiteAdapter(this);
             // Open to write
             mySQLiteAdapter.openToWrite();
+
             // Insert data
             mySQLiteAdapter.insert("People ", totalPrice, serviceTax, priceDivide);
 
@@ -58,8 +61,9 @@ public class History_Run extends AppCompatActivity {
             listContent.setText(contentRead);
         }
 
-        divideRatio = getIntent().getBooleanExtra("divideRatio", false);
-        if (divideRatio) {
+        dividePercentage = getIntent().getBooleanExtra("dividePercentage", false);
+        if (dividePercentage) {
+
             numOfPeople2 = getIntent().getIntExtra("numberOfPeople2", 1);
             totalPrice=getIntent().getDoubleExtra("totalPrice2",0.0);
             percentageList=new double[10];
