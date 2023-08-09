@@ -27,17 +27,21 @@ public class History_Run extends AppCompatActivity {
 
         ll = findViewById(R.id.layout6);
 
+        //Row one with the attributes of the data
         TextView attribute=new TextView(this);
         attribute.setText("Name    |"+"Total Price"+"|"+"Tax/Percent"+"|"+"Price Divide");
         attribute.setTextSize(18.0f);
         attribute.setBackgroundColor(Color.LTGRAY);
 
+        //Text View of content
         TextView listContent = new TextView(this);
         listContent.setTextSize(18.0f);
 
+        //add attribute to layout
         ll.addView(attribute);
         ll.addView(listContent);
 
+        //if the divideSame page is true then go to this function
         divideSame = getIntent().getBooleanExtra("divideSame", true);
         if (divideSame) {
             serviceTax = getIntent().getDoubleExtra("serviceTax", 1.0);
@@ -61,6 +65,7 @@ public class History_Run extends AppCompatActivity {
             listContent.setText(contentRead);
         }
 
+        //if dividePercentage is true then go to this function
         dividePercentage = getIntent().getBooleanExtra("dividePercentage", false);
         if (dividePercentage) {
 
