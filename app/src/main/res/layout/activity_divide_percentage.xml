@@ -24,7 +24,7 @@
                 android:background="#facda7"
                 android:gravity="center"
                 android:textStyle="bold"
-                android:text="Divide With Ratio"
+                android:text="Divide With Percentage"
                 android:textSize="30.0sp"
                 tools:ignore="TextContrastCheck" />
 
